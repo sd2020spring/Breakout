@@ -143,11 +143,11 @@ class BreakoutModel:
         wall_space = [10, 10] # space between bricks on x & y axes
 
         # bricks 2D array. Each column in a row is the same and each row increases as it goes up the screen
-        wall_bricks = [[(wall_dims[1]-j-1)+1 for j in range(wall_dims[1])] for i in range(wall_dims[0])]
+        wall_bricks = [[(wall_dims[1]-j) for j in range(wall_dims[1])] for i in range(wall_dims[0])]
 
         # creating a gradient color function for all possible brick numbers
-        max_number = (wall_dims[1]-1)+1
-        wall_colors = [((255/(max_number-1))*j,255-(255/(max_number-1))*j,255) for j in range(max_number)]
+        color_per_brick = 255/(wall_dims[1]-1)
+        wall_colors = [(color_per_brick*j,255-color_per_brick*j,255) for j in range(max_number)]
 
         self.wall = Wall(wall_wh, wall_dims, wall_space, wall_colors, wall_bricks)
 
@@ -189,18 +189,21 @@ class BreakoutModel:
             return True # player won
 
         elif self.ball.xy[1] - self.ball.radius <= self.wall.wh[1]: # check if ball is near wall
-            x = None
+            x_index = None
 
             for i in range(len(self.wall.x_coors)): # check if ball is under a brick vertically
-                if (self.ball.xy[0] >= self.wall.x_coors[i] and self.ball.xy[0]
-                        <= self.wall.x_coors[i] + self.wall.brick_wh[0]):
-                    x = i # saves the wall's x index (column #)
+                right_of_edge = self.ball.xy[0] >= self.wall.x_coors[i]
+                left_of_edge = self.ball.xy[0] <= self.wall.x_coors[i] + self.wall.brick_wh[0]
+                if (right_of_edge and left_of_edge):
+                    x_index = i # saves the wall's x index (column #)
 
-            if x != None:
+            if x_index != None:
                 for j in range(len(self.wall.y_coors)): # check if ball is touching a brick
-                    if (self.ball.xy[1] - self.ball.radius <= self.wall.y_coors[j]
-                            + self.wall.brick_wh[1] and self.wall.bricks[x][j] > 0):
-                        self.wall.remove_brick(x, j)
+                    ball_under_brick = (self.ball.xy[1] - self.ball.radius <=
+                            self.wall.y_coors[j] + self.wall.brick_wh[1])
+
+                    if (ball_under_brick and self.wall.bricks[x][j] > 0):
+                        self.wall.remove_brick(x_index, j)
                         self.ball.speed_xy[1] = abs(self.ball.speed_xy[1])
 
         return False # game still going
