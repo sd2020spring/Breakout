@@ -1,14 +1,32 @@
-# Proposal 2
+# Coronavirus data visualizer
+We want to visualize the data for Coronavirus pandemic as it is the most relevant today. We will be using the dataset given by Johns Hopkins University. We may use one or several of the following libraries. 
+    Matplotlib
+    Seaborn
+    ggplot
+    Bokeh
+    pygal
+    Plotly
+    geoplotlib
+    Gleam
+    missingno
+    Leather
 
-Your MP4 repo should have a proposal document (markdown or PDF, submit a link on Canvas) that describes the main idea of 3 projects.
+matplotlibBy doing this, we will get to explore:
 
-Each of the three proposals in this document should address:
-- What is the main idea of your project? What topics will you explore and what will you generate? What is your minimum viable product? What is a stretch goal?
-- What are your learning goals for this project (for each member)?
-- What libraries are you planning to use? (if you don’t know enough yet, please outline how you will decide this question during the beginning phase of the project).
-- What do you plan to accomplish by the mid-project check-in? (See the check-in section for some generic goals; edit to suit your particular project)
-- What do you view as the biggest risks to you being successful on this project? How will you mitigate them?
+    Efficient data visualization skill
+    data scrapping skill
+    machine learning skill
 
-Please do not paste in these questions and answer them. Instead, use them as guidelines to check for completeness as you draft a cohesive proposal document.
+Our minimum viable product includes having:
 
-It is OK to have one idea more fleshed out than the other two if you want to indicate a strong preference.
+    The number of confirmed cases in 50 top affected countries
+    The number of death in the 50 countries we selected
+
+Our stretch goal is to add a couple of extra features such as:
+
+    timeline feature (how the number in those affected countries changed overtime)
+    rank (top 1 to top 10)
+
+Our data visualization is for everyone. It is universal, so whoever would like to see and compare the numbers among countries are able to see the trend of the pandemic. The only limitation would depend on how simple yet effective we will be able to visualize the dataset. If the dataset does not do "story-telling" well, there will be less meaning to the visualization.
+
+For each member, the learning goals are: to learn how to code for data visualization in python (Izumi) and *please insert here*(Lilo). 

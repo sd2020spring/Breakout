@@ -1,0 +1,8 @@
+Johns Hopkins worldwide data:
+- https://github.com/CSSEGISandData/COVID-19
+
+New York Times, US only:
+- https://github.com/nytimes/covid-19-data
+
+Kaggle dataset from World Health Organization:
+- https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset
