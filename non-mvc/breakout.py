@@ -3,15 +3,11 @@ from ball import Ball
 from paddle import Paddle
 from wall import Wall
 
-# Izumi: if you want to edit anything or ask me questions about things I added please
-# do! I wrote a lot and I know I'm not the best at documenting/explaining everything.
-# Also I'm sure we can add a lot more cool features to make the game better! -Lilo
-
 class Breakout():
     def main(self):
         """ A game of Breakout contains variables of:
-            size: list/tuple of length 2, containing integer values of the width
-                    and height respectively of the game window in pixels
+            size: tuple of length 2, containing integers of the width and height
+                    respectively of the game window in pixels
             background_color: tuple of length 3 of R, G, and B color components
                     for the background color of the window
             speed: integer number of milliseconds to delay between frames,
