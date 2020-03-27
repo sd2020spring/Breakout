@@ -6,6 +6,14 @@ import math
 
 class Wall:
     def __init__(self, wh, dims, space, colors, bricks):
+        """
+        Args:
+            wh: tuple of length 2, the width and height of the wall in pixels
+            dims: tuple of length 2, the number of rows and columns of bricks on the wall
+            space: tuple of length 2, (x, y) pixels of space to place between bricks on the x & y axes
+            color: tuple of length 3, (R, G, B) color of the wall
+            bricks: array of size 'dims' with an integer value of the number of layers on each brick
+        """
         self.wh = wh
         self.bricks = bricks
         self.colors = colors
@@ -29,6 +37,10 @@ class Wall:
     def remove_brick(self, row, col):
         """ Removes one layer from the brick at the specified row and column
         number of the bricks array.
+
+        Args:
+            row: integer index of the row number on the brick wall
+            col: integer index of the column number on the brick wall
         """
         self.bricks[row][col] -= 1
         self.brick_count -= 1
@@ -42,15 +54,11 @@ class Ball:
     def __init__(self, size, radius, xy, color, speed_xy):
         """
         Args:
-            size: tuple of length 2, containing integers of the width and height
-                    respectively of the game window in pixels
-            radius: integer of the radius of the ball in terms of number of pixels
-            xy: tuple of length 2, containing integer x and y coordinates
-                    respectively of the starting position of the ball in pixels
-            color: tuple of length 3, containing the integer R, G, and B
-                    components of the color to make the ball
-            speed_xy: tuple of length 2, containing integer x and y speeds
-                    respectively in pixels to move the ball per frame
+            size: tuple of length 2, the width and height of the game window in pixels
+            radius: radius of the ball in pixels
+            xy: tuple of length 2, (x, y) starting position of the ball in pixels
+            color: tuple of length 3, (R, G, B) color of the ball
+            speed_xy: tuple of length 2, x and y speeds in pixels to move the ball per frame
         """
         self.size = size
         self.radius = radius
@@ -59,8 +67,7 @@ class Ball:
         self.speed_xy = speed_xy
 
     def move(self):
-        """ Moves the ball, including bouncing it off of the game window edges.
-        """
+        """ Moves the ball, including bouncing it off of the game window edges """
         for i in range(2):
             self.xy[i] += self.speed_xy[i]
             if self.xy[i] <= self.radius:
@@ -74,14 +81,10 @@ class Paddle:
     def __init__(self, size, wh, xy, color, speed):
         """
         Args:
-            size: tuple of length 2, containing integers of the width and height
-                    respectively of the game window in pixels
-            wh: tuple of length 2, containing integer values of the width
-                    and height respectively of the paddle in pixels
-            xy: tuple of length 2, containing integer x and y coordinates
-                    respectively of the starting position of the paddle in pixels
-            color: tuple of length 3, containing the integer R, G, and B
-                    components of the color to make the paddle
+            size: tuple of length 2, the width and height of the game window in pixels
+            wh: tuple of length 2, the width and height of the paddle in pixels
+            xy: tuple of length 2, (x, y) starting position of the paddle in pixels
+            color: tuple of length 3, (R, G, B) color of the paddle
             speed: integer amount of pixels for the paddle to move right/left per
                     press of right/left arrow keys (if using arrow key control)
         """
@@ -92,8 +95,7 @@ class Paddle:
         self.speed = speed
 
     def move(self, pos=None, dir=None):
-        """ Moves the paddle in either the direction or to the position specified.
-        """
+        """ Moves the paddle in either the direction or to the position specified """
         if pos != None:
             self.xy[0] = pos
         if dir != None:

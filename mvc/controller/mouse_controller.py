@@ -10,7 +10,6 @@ class PyGameMouseController:
         self.model = model
 
     def handle_event(self,event):
-        """ Makes paddle follow the mouse horizontally, stopping at edges of the screen.
-        """
+        """ Makes paddle follow the mouse horizontally """
         if event.type == pygame.locals.MOUSEMOTION:
             self.model.paddle.move(pos=event.pos[0] - self.model.paddle.wh[0]/2)

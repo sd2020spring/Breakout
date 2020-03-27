@@ -47,7 +47,7 @@ class Breakout():
 
     def make_wall(self):
         wall_wh = [self.size[0], int(self.size[1]*.4)] # what area of screen to build wall in
-        wall_dims = [6, 4] # num of bricks along x & y axes
+        wall_dims = [6, 5] # num of bricks along x & y axes
         wall_space = [10, 10] # space between bricks on x & y axes
 
         # bricks 2D array. Each column in a row is the same and each row increases as it goes up the screen
@@ -112,7 +112,7 @@ class Breakout():
             Returns:
                 boolean whether ball is below paddle, meaning the player lost
         """
-        over_paddle = (self.ball.xy[0] >= self.paddle.xy[0] and self.ball.xy[0] <= self.paddle.xy[0]+paddle.wh[0])
+        over_paddle = (self.ball.xy[0] >= self.paddle.xy[0] and self.ball.xy[0] <= self.paddle.xy[0] + self.paddle.wh[0])
         inside_paddle = (self.paddle.xy[1] <= self.ball.xy[1] + self.ball.radius)
         under_paddle = (self.paddle.xy[1] + self.paddle.wh[1] <= self.ball.xy[1] + self.ball.radius)
 

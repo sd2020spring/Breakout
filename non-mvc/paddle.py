@@ -21,22 +21,29 @@ class Paddle:
         self.color = color
         self.speed = speed
 
-    def move(self, pos=None, dir=None):
-        """ Moves the ball, including bouncing it off of the game window edges.
+    def move_by_arrow(self, event):
+        """ Moves the paddle to follow arrow key right/left presses.
         """
-        if pos != None:
-            self.xy[0] = pos
-        if dir != None:
-            if dir == 'right':
-                self.xy[0] += self.speed
-            elif dir == 'left':
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
                 self.xy[0] -= self.speed
+                if (self.xy[0] < 0):
+                    self.xy[0] = 0
+            if event.key == pygame.K_RIGHT:
+                self.xy[0] += self.speed
+                if (self.xy[0] > self.size[0] - self.wh[0]):
+                    self.xy[0] = self.size[0] - self.wh[0]
 
-        # make paddle stay fully onscreen, capped at edges of the screen
-        if self.xy[0] < 0:
-            self.xy[0] = 0
-        if self.xy[0] > self.size[0] - self.wh[0]:
-            self.xy[0] = self.size[0] - self.wh[0]
+    def move_by_mouse(self, event):
+        """ Moves the paddle to follow the mouse horizontally.
+        """
+        if event.type == pygame.MOUSEMOTION:
+            coordinates = pygame.mouse.get_pos() # gives (x,y) coordinates
+            self.xy[0] = coordinates[0] - self.wh[0]//2
+            if self.xy[0] < 0:
+                self.xy[0] = 0
+            if self.xy[0] > self.size[0] - self.wh[0]:
+                self.xy[0] = self.size[0] - self.wh[0]
 
     def draw(self, screen):
         """ Draws the paddle on the screen using saved information about it.

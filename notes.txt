@@ -1,6 +1,5 @@
 Improvement ideas:
-- make ball change direction better when it bounces, so it doesn't just mirror the angle it was going before,
-    making it less predictable and more fun
+- make ball change direction better when it bounces, so it doesn't just mirror the angle it was going before, making it less predictable and more fun
 - add a score counter or timer - maybe display the count of how many bricks are left?
 - track how many times they lost and how many won? percentage?
 - add some sort of menu and end screen
@@ -8,7 +7,7 @@ Improvement ideas:
 - different levels ex. goes faster each round, smaller paddle, more bricks or ones that take more hits
 - add some nice looking color schemes, maybe even a color scheme selector option
 
-Live code editor links:
+Live code editor options:
 - Teletype for Atom: https://teletype.atom.io/login
 - Websites with link shares:
 	- http://collabedit.com

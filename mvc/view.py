@@ -7,11 +7,16 @@ import pygame
 class PyGameWindowView:
     """ A view of breakout rendered in a Pygame window """
     def __init__(self, model, size):
-        """ Initialize the view with a reference to the model and the
-            specified game screen dimensions (represented as a tuple
-            containing the width and height) """
+        """ Initialize view with a reference to the model and the specified game
+        screen dimensions (represented as a tuple of the width and height).
+
+        Args:
+            model: an instance of the BreakoutModel class
+            size: a tuple of width and height of the window in pixels
+        """
         self.model = model
         self.screen = pygame.display.set_mode(size)
+        pygame.display.set_caption("Breakout") # set window name
 
     def draw(self):
         """ Draw the current game state to the screen """
@@ -34,4 +39,6 @@ class PyGameWindowView:
                             self.model.wall.colors[self.model.wall.bricks[i][j]-1],
                             [self.model.wall.x_coors[i], self.model.wall.y_coors[j],
                             self.model.wall.brick_wh[0], self.model.wall.brick_wh[1]], 0)
+
+        # show changes
         pygame.display.update()

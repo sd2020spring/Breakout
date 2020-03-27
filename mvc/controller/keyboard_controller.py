@@ -10,7 +10,7 @@ class PyGameKeyboardController:
         self.model = model
 
     def handle_event(self,event):
-        """ Makes paddle follow arrow key right/left presses, stopping at edges of the screen. """
+        """ Makes paddle follow arrow key right/left presses """
         if event.type != pygame.locals.KEYDOWN:
             return
         if event.key == pygame.K_LEFT:

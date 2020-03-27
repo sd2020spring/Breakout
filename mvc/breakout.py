@@ -1,6 +1,8 @@
 """
-This project uses the Model-View-Controller (MVC) design pattern to create the
-arcade game Breakout.
+Breakout
+
+This project uses the Model-View-Controller (MVC) design pattern to implement
+the arcade game Breakout using the pygame library.
 
 @author: Lilo & Izumi
 """
@@ -12,9 +14,7 @@ from controller.keyboard_controller import PyGameKeyboardController
 from controller.mouse_controller import PyGameMouseController
 
 def play_game(size):
-    """
-    Given screen 'size' as (x,y) tuple, start Breakout game
-    """
+    """ Given screen size as (x,y) tuple, play Breakout game """
     pygame.init()
     model = BreakoutModel(size)
     view = PyGameWindowView(model, size)
@@ -37,5 +37,6 @@ def play_game(size):
     pygame.quit()
 
 if __name__ == '__main__':
+    """ Set the size of the window and start the game """
     size = (640, 480)
     play_game(size)

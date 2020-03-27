@@ -1,10 +1,8 @@
 # Breakout
-InteractiveVisualization-izumi-lilo created by GitHub Classroom  
-
-Code for our version of the game 'Breakout' using pygame library by Izumi and Lilo.  
+Code for our version of the arcade game 'Breakout' using pygame library by Izumi and Lilo.  
 Run **breakout.py** to play!
 
 - Can modify the game state in model.py to edit the wall dimensions and color scheme.
-- mvc is the model, controller, view format, while non-mvc is the original version of the code.
+- mvc is the model, view, controller version of the code while non-mvc is the original.
 
-<img src="images/image1.png" width="400"> <img src="images/image2.png" width="400">
+<img src="images/image2.png" width="450"> <img src="images/image4.png" width="450">
