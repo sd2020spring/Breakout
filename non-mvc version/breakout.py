@@ -78,8 +78,8 @@ class Breakout():
                 if event.type == pygame.QUIT or escape:
                     running = False
 
-            loser = self.check_paddle(self.ball, self.paddle)
-            winner = self.check_wall(self.ball, self.wall)
+            loser = self.check_paddle()
+            winner = self.check_wall()
 
             if not winner and not loser:
                 self.ball.move()
@@ -110,43 +110,43 @@ class Breakout():
         else:
             screen.fill((255,0,0))
 
-    def check_paddle(self, ball, paddle):
+    def check_paddle(self):
         """ Makes the ball interact with the paddle.
 
             Returns:
                 boolean whether ball is below paddle, meaning the player lost
         """
-        over_paddle = (ball.xy[0] >= paddle.xy[0] and ball.xy[0] <= paddle.xy[0]+paddle.wh[0])
-        inside_paddle = (paddle.xy[1] <= ball.xy[1]+ball.radius)
-        under_paddle = (paddle.xy[1]+paddle.wh[1] <= ball.xy[1]+ball.radius)
+        over_paddle = (self.ball.xy[0] >= self.paddle.xy[0] and self.ball.xy[0] <= self.paddle.xy[0]+paddle.wh[0])
+        inside_paddle = (self.paddle.xy[1] <= self.ball.xy[1] + self.ball.radius)
+        under_paddle = (self.paddle.xy[1] + self.paddle.wh[1] <= self.ball.xy[1] + self.ball.radius)
 
         if under_paddle: # means you died; can't bounce ball back up
             return True # tells program to stop running
         elif over_paddle and inside_paddle:
-            ball.speed_xy[1] = -1*abs(ball.speed_xy[1])
+            self.ball.speed_xy[1] = -1*abs(self.ball.speed_xy[1])
         return False # tells program to keep running
 
-    def check_wall(self, ball, wall):
+    def check_wall(self):
         """ Makes the ball interact with the brick wall.
 
             Returns:
                 boolean whether all bricks are gone, meaning the player won
         """
-        if wall.brick_count == 0: # checks if wall is gone
+        if self.wall.brick_count == 0: # checks if wall is gone
             return True # tells program to quit
 
-        elif ball.xy[1]-ball.radius <= wall.wh[1]: # check if ball is near wall
+        elif self.ball.xy[1] - self.ball.radius <= self.wall.wh[1]: # check if ball is near wall
             x = None
 
-            for i in range(len(wall.x_coors)): # check if ball is under a brick vertically
-                if ball.xy[0] >= wall.x_coors[i] and ball.xy[0] <= wall.x_coors[i]+wall.brick_wh[0]:
+            for i in range(len(self.wall.x_coors)): # check if ball is under a brick vertically
+                if self.ball.xy[0] >= self.wall.x_coors[i] and self.ball.xy[0] <= self.wall.x_coors[i] + self.wall.brick_wh[0]:
                     x = i # saves the wall's x index for that column of the wall
 
             if x != None:
-                for j in range(len(wall.y_coors)): # check if ball is touching a brick
-                    if ball.xy[1]-ball.radius <= wall.y_coors[j]+wall.brick_wh[1] and wall.bricks[x][j] > 0:
-                        wall.remove_brick(x, j)
-                        ball.speed_xy[1] = abs(ball.speed_xy[1])
+                for j in range(len(self.wall.y_coors)): # check if ball is touching a brick
+                    if self.ball.xy[1] - self.ball.radius <= self.wall.y_coors[j] + self.wall.brick_wh[1] and self.wall.bricks[x][j] > 0:
+                        self.wall.remove_brick(x, j)
+                        self.ball.speed_xy[1] = abs(self.ball.speed_xy[1])
 
         return False # tells program to keep going
 

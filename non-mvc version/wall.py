@@ -3,9 +3,6 @@ import pygame
 class Wall:
     def __init__(self, wh, dims, space, colors, bricks):
         self.wh = wh
-        # self.dims = dims
-        # self.space = space
-
         self.bricks = bricks
         self.colors = colors
         self.brick_count = 0
