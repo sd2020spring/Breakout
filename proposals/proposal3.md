@@ -1,14 +1,26 @@
-# Proposal 3
+# Space shooter game
+We want to make one of the classic games, space shotter using the pygame library. By doing this, we will get to explore:
 
-Your MP4 repo should have a proposal document (markdown or PDF, submit a link on Canvas) that describes the main idea of 3 projects.
+    Computer Graphics 
+    
 
-Each of the three proposals in this document should address:
-- What is the main idea of your project? What topics will you explore and what will you generate? What is your minimum viable product? What is a stretch goal?
-- What are your learning goals for this project (for each member)?
-- What libraries are you planning to use? (if you don’t know enough yet, please outline how you will decide this question during the beginning phase of the project).
-- What do you plan to accomplish by the mid-project check-in? (See the check-in section for some generic goals; edit to suit your particular project)
-- What do you view as the biggest risks to you being successful on this project? How will you mitigate them?
+Our minimum viable product includes having:
 
-Please do not paste in these questions and answer them. Instead, use them as guidelines to check for completeness as you draft a cohesive proposal document.
+    A space ship that shoots. (one press one shot, hold for continuous shooting)
+    the objects
+    Background (space)
+    Scoreboard (timer)
+    einding game by collision 
 
-It is OK to have one idea more fleshed out than the other two if you want to indicate a strong preference.
+Our stretch goal is to add a couple of extra features such as:
+
+    different levels (more objects, higher speed etc)
+    score history 
+    feature to choose from different ship
+    change in backgroud as game progress
+    background music
+   
+
+Our space shooter game is meant for anyone who wants to play games. The limitations are similar to breakout game. Since it is a primarily visual game, people with impaired vision may not be able to play. Also, the control interface is a computer mouse and keyboard, so anyone who cannot physically operate these devices would need some sort of controls adaptation in order to play. 
+
+For each member, the learning goals are: to learn how to develop different kinds of game (Izumi) and to learn how to use the pygame library (Lilo).
