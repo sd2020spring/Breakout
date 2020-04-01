@@ -1,5 +1,5 @@
 """
-BrickBreaker controller code
+Breakout controller code
 """
 
 import pygame.locals

@@ -1,5 +1,7 @@
 """
-Breakout model code
+Model
+
+This file contains the Wall, Ball, Paddle, and BreakoutModel classes.
 """
 import random
 import math
@@ -116,7 +118,6 @@ class BreakoutModel:
         # window info
         self.size = size
         self.background_color = (0, 0, 0)
-        self.wait_time = 1000 # ms to show endscreen before restarting
 
         # ball info
         ball_radius = int(size[0]/60)
@@ -146,7 +147,8 @@ class BreakoutModel:
         wall_bricks = [[(wall_dims[1]-j) for j in range(wall_dims[1])] for i in range(wall_dims[0])]
 
         # creating a gradient color function for all possible brick numbers
-        color_per_brick = 255/(wall_dims[1]-1)
+        max_number = wall_dims[1]
+        color_per_brick = 255/(max_number-1)
         wall_colors = [(color_per_brick*j,255-color_per_brick*j,255) for j in range(max_number)]
 
         self.wall = Wall(wall_wh, wall_dims, wall_space, wall_colors, wall_bricks)

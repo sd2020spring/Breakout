@@ -1,5 +1,7 @@
 """
-Breakout view code
+View
+
+This file contains the PyGameWindowView class.
 """
 
 import pygame
