@@ -204,7 +204,7 @@ class BreakoutModel:
                     ball_under_brick = (self.ball.xy[1] - self.ball.radius <=
                             self.wall.y_coors[j] + self.wall.brick_wh[1])
 
-                    if (ball_under_brick and self.wall.bricks[x][j] > 0):
+                    if (ball_under_brick and self.wall.bricks[x_index][j] > 0):
                         self.wall.remove_brick(x_index, j)
                         self.ball.speed_xy[1] = abs(self.ball.speed_xy[1])
 
