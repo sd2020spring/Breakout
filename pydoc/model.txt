@@ -1,0 +1,100 @@
+Help on module model:
+
+NAME
+    model - Model
+
+DESCRIPTION
+    This file contains the Wall, Ball, Paddle, and BreakoutModel classes.
+
+CLASSES
+    builtins.object
+        Ball
+        BreakoutModel
+        Paddle
+        Wall
+
+    class Ball(builtins.object)
+     |  Ball(size, radius, xy, color, speed_xy)
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, size, radius, xy, color, speed_xy)
+     |      Args:
+     |          size: tuple of length 2, the width and height of the game window in pixels
+     |          radius: radius of the ball in pixels
+     |          xy: tuple of length 2, (x, y) starting position of the ball in pixels
+     |          color: tuple of length 3, (R, G, B) color of the ball
+     |          speed_xy: tuple of length 2, x and y speeds in pixels to move the ball per frame
+     |
+     |  move(self)
+     |      Moves the ball, including bouncing it off of the game window edges
+
+    class BreakoutModel(builtins.object)
+     |  BreakoutModel(size)
+     |
+     |  Encodes a model of the game state
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, size)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  check_paddle(self)
+     |      Makes the ball interact with the paddle by checking whether the ball
+     |      has hit the paddleand whether it went below the paddle.
+     |
+     |      Returns:
+     |          boolean whether ball is below paddle, meaning the player lost
+     |
+     |  check_wall(self)
+     |      Makes the ball interact with the brick wall by checking whether the
+     |      ball has hit the wall and which brick, then reversing the direction of
+     |      the ball and removing a layer from the brick.
+     |
+     |      Returns:
+     |          boolean whether all bricks are gone, meaning the player won
+     |
+     |  update(self)
+     |      Update the game state by running the movement of the ball and
+     |      interactions of the ball with the wall and paddle.
+
+    class Paddle(builtins.object)
+     |  Paddle(size, wh, xy, color, speed)
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, size, wh, xy, color, speed)
+     |      Args:
+     |          size: tuple of length 2, the width and height of the game window in pixels
+     |          wh: tuple of length 2, the width and height of the paddle in pixels
+     |          xy: tuple of length 2, (x, y) starting position of the paddle in pixels
+     |          color: tuple of length 3, (R, G, B) color of the paddle
+     |          speed: integer amount of pixels for the paddle to move right/left per
+     |                  press of right/left arrow keys (if using arrow key control)
+     |
+     |  move(self, pos=None, dir=None)
+     |      Moves the paddle in either the direction or to the position specified
+
+    class Wall(builtins.object)
+     |  Wall(wh, dims, space, colors, bricks)
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, wh, dims, space, colors, bricks)
+     |      Args:
+     |          wh: tuple of length 2, the width and height of the wall in pixels
+     |          dims: tuple of length 2, the number of rows and columns of bricks on the wall
+     |          space: tuple of length 2, (x, y) pixels of space to place between bricks on the x & y axes
+     |          color: tuple of length 3, (R, G, B) color of the wall
+     |          bricks: array of size 'dims' with an integer value of the number of layers on each brick
+     |
+     |  remove_brick(self, row, col)
+     |      Removes one layer from the brick at the specified row and column
+     |      number of the bricks array.
+     |
+     |      Args:
+     |          row: integer index of the row number on the brick wall
+     |          col: integer index of the column number on the brick wall
+
+FILE
+    /home/lilo/SoftwareDesign/Projects/Breakout/mvc/model.py

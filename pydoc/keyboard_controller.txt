@@ -1,0 +1,24 @@
+Help on module keyboard_controller:
+
+NAME
+    keyboard_controller - Breakout keyboard controller code
+
+CLASSES
+    builtins.object
+        PyGameKeyboardController
+
+    class PyGameKeyboardController(builtins.object)
+     |  PyGameKeyboardController(model)
+     |
+     |  Handles keyboard input for brick breaker
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, model)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  handle_event(self, event)
+     |      Makes paddle follow arrow key right/left presses
+
+FILE
+    /home/lilo/SoftwareDesign/Projects/Breakout/mvc/controller/keyboard_controller.py

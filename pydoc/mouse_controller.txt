@@ -1,0 +1,24 @@
+Help on module mouse_controller:
+
+NAME
+    mouse_controller - Breakout controller code
+
+CLASSES
+    builtins.object
+        PyGameMouseController
+
+    class PyGameMouseController(builtins.object)
+     |  PyGameMouseController(model)
+     |
+     |  A controller that uses the mouse to move the paddle
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, model)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  handle_event(self, event)
+     |      Makes paddle follow the mouse horizontally
+
+FILE
+    /home/lilo/SoftwareDesign/Projects/Breakout/mvc/controller/mouse_controller.py

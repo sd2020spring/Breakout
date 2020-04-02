@@ -1,0 +1,32 @@
+Help on module view:
+
+NAME
+    view - View
+
+DESCRIPTION
+    This file contains the PyGameWindowView class.
+
+CLASSES
+    builtins.object
+        PyGameWindowView
+
+    class PyGameWindowView(builtins.object)
+     |  PyGameWindowView(model, size)
+     |
+     |  A view of breakout rendered in a Pygame window
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, model, size)
+     |      Initialize view with a reference to the model and the specified game
+     |      screen dimensions (represented as a tuple of the width and height).
+     |
+     |      Args:
+     |          model: an instance of the BreakoutModel class
+     |          size: a tuple of width and height of the window in pixels
+     |
+     |  draw(self)
+     |      Draw the current game state to the screen
+
+FILE
+    /home/lilo/SoftwareDesign/Projects/Breakout/mvc/view.py

@@ -1,0 +1,17 @@
+Help on module breakout:
+
+NAME
+    breakout - Breakout
+
+DESCRIPTION
+    This project uses the Model-View-Controller (MVC) design pattern to implement
+    the arcade game Breakout using the pygame library.
+
+    @author: Lilo & Izumi
+
+FUNCTIONS
+    play_game(size)
+        Given screen size as (x,y) tuple, play Breakout game
+
+FILE
+    /home/lilo/SoftwareDesign/Projects/Breakout/mvc/breakout.py
